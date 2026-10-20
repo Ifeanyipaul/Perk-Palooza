@@ -30,8 +30,9 @@ Complete this section with actual names and responsibilities.
 
 | Team member | Role | Responsibilities / area | GitHub handle |
 |---|---|---|---|
-| [Name] | [Role] | [Actual responsibility] | [@handle] |
-| [Name] | [Role] | [Actual responsibility] | [@handle] |
+| Mary Precious | Flutter Developer | App Developer 
+| Okereke Prince | Python Developer | Backend Developer 
+| Clement | Product Designer | Figma Designer 
 
 ## Ownership rules
 
