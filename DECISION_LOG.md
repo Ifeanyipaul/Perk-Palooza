@@ -31,9 +31,37 @@ Why was the option chosen? What risks or consequences remain?
 
 ---
 
+## Decision history
+
+### [DEC-001] Verify businesses before onboarding
+
+- **Status:** Recorded from the 2026-10-20 product planning meeting
+- **Date raised:** 2026-10-20
+- **Decision date:** 2026-10-20
+- **Decision owner:** To be confirmed by the team
+- **Contributors consulted:** Meeting attendees; names should be recorded only where confirmed
+- **Related PRD section:** Business onboarding
+- **Related GitHub Issues:** Create/link a dedicated business-verification issue
+
+**Context**  
+The team discussed user roles and how businesses should be onboarded.
+
+**Decision**  
+Businesses must be verified before they are uploaded to or onboarded onto the platform.
+
+**Rationale and trade-offs**  
+This establishes verification as a gate before a business becomes available on the platform. The team still needs to define the verification evidence, responsible reviewer, approval/rejection states and audit trail.
+
+**Follow-up actions**
+- [ ] Define required business verification documents and checks — owner to be assigned
+- [ ] Define reviewer permissions and approval/rejection workflow — owner to be assigned
+- [ ] Add acceptance criteria and link the implementation issue — owner to be assigned
+
+---
+
 ## Open decisions identified in PRD v1.0
 
-Track each item below in an issue and assign an owner. These are unresolved in the source PRD; this log does not decide them.
+Track each item below in an issue and assign an owner. These remain unresolved unless a dated decision record says otherwise.
 
 - OD-01: Partial redemption and treatment of remaining value.
 - OD-02: Default card validity and expiry/grace-window rules.
@@ -52,6 +80,4 @@ Track each item below in an issue and assign an owner. These are unresolved in t
 - OD-15: Currency and launch geography.
 - OD-16: Mandatory notification channels and urgency.
 
-## Decision history
-
-No decisions are recorded as approved in this starter file. Add dated records as decisions are actually made.
+Do not treat the open items above as approved product behavior until the team records a decision.
