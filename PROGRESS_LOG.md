@@ -39,6 +39,7 @@ Use one entry per meaningful reporting period. Keep statements factual and link 
 - Initial planning documents are present: roadmap, decision log, team responsibilities, meeting notes and progress log.
 - The 2026-10-20 planning meeting notes record a decision that businesses must be verified before onboarding.
 - The repository contains an open UI design issue: [Issue #1](https://github.com/Ifeanyipaul/Perk-Palooza/issues/1).
+- Created [Issue #2](https://github.com/Ifeanyipaul/Perk-Palooza/issues/2) to define business verification and onboarding acceptance criteria.
 
 ### In progress / to confirm
 - UI design task tracking and deliverables — follow progress in Issue #1.
