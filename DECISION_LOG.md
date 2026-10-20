@@ -55,7 +55,7 @@ This establishes verification as a gate before a business becomes available on t
 **Follow-up actions**
 - [ ] Define required business verification documents and checks — owner to be assigned
 - [ ] Define reviewer permissions and approval/rejection workflow — owner to be assigned
-- [ ] Add acceptance criteria and link the implementation issue — owner to be assigned
+- [ ] Track the workflow in [Issue #2](https://github.com/Ifeanyipaul/Perk-Palooza/issues/2) and assign an owner — owner to be assigned
 
 ---
 
