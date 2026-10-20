@@ -1,48 +1,51 @@
-# Purpose Spending Platform
+# Perk Palooza
 
-## Overview
+A purpose-spending platform in development. The product is designed to help people allocate funds for defined purposes and enable controlled spending with approved businesses.
 
-Purpose Spending Platform is a digital payment application designed to enable people to allocate funds for specific purposes and ensure that those funds are used within defined spending restrictions.
+> **Project status:** Requirements review and MVP planning, with UI design scheduled to begin. This is not a production-ready product.
 
-The platform is intended to connect fund providers, recipients, and approved businesses through a structured spending and redemption workflow.
+## Problem
 
-## Problem Statement
+Giving someone money for a specific purpose does not guarantee that the money will be used as intended. Perk Palooza explores purpose-based funding, controlled spending, redemption verification and transaction records.
 
-Giving someone money for a specific purpose does not guarantee that the money will be used as intended. This project explores a technology-driven approach to purpose-based funding, controlled spending, and transaction verification.
+## Core product areas
 
-## Core Features
-
-- Purpose-based fund allocation
-- Digital and physical card support
+- Purpose-based fund allocation and card creation
 - Spending restrictions and expiry
-- Approved business redemption
-- Transaction confirmation
-- Payment gateway integration
-- Cashback functionality
-- Business settlement and float management
-- User notifications
+- Approved-business onboarding and redemption
+- Paystack payment integration and server-side payment verification
+- Transaction records, notifications and operational audit trail
+- Business float, settlement and reconciliation
+- Cashback and physical-card capabilities, subject to unresolved scope decisions
 
-## Project Status
+The Product Requirements Document (PRD) is the source of truth for requirements. Proposed features must not be treated as approved launch scope until confirmed by the team.
 
-Currently in development.
+## Current planning documents
 
-## Documentation
+- [Product Requirements Document / Developer Handoff (PDF)](PRD_Developer_Handoff_v1.0.pdf)
+- [Product Roadmap](PRODUCT_ROADMAP.md)
+- [Team and Responsibilities](TEAM_AND_RESPONSIBILITIES.md)
+- [Decision Log](DECISION_LOG.md)
+- [Progress Log](PROGRESS_LOG.md)
+- [Meeting Notes](MEETING_NOTES.md)
+- [Open UI design task](https://github.com/Ifeanyipaul/Perk-Palooza/issues/1)
 
-- Product requirements: `docs/02-product-requirements.md`
-- Scope and deliverables: `docs/03-scope-and-deliverables.md`
-- System architecture: `docs/05-system-architecture.md`
-- Database design: `docs/06-database-design.md`
-- API documentation: `docs/07-api-documentation.md`
-- Testing plan: `docs/09-testing-plan.md`
+## Current priorities
 
-## Technology Stack
+1. Review the PRD and agree the MVP scope.
+2. Resolve launch-blocking product and operational questions.
+3. Track UI design deliverables and review them against agreed user journeys.
+4. Break approved requirements into assigned GitHub Issues with acceptance criteria.
+5. Keep implementation, testing and release claims tied to verifiable work.
 
-To be documented after the stack is confirmed.
+## Team coordination
 
-## Security
+Paul Ifeanyichukwu Gabriel coordinates requirements, tasks, decisions and progress as Team Lead. Engineering, design and QA contributions should be attributed to the people who actually perform that work. See [Team and Responsibilities](TEAM_AND_RESPONSIBILITIES.md).
 
-Never commit API keys, passwords, payment credentials, private client information, or production user data.
+## Technology
 
-## Ownership and Confidentiality
+The PRD identifies Paystack for checkout. The full application stack and implementation details should be recorded after engineering confirms them; this README does not assume unconfirmed technologies.
 
-This is a private client project. Source code and project documentation are maintained in a restricted repository. Public disclosure requires appropriate authorization.
+## Security and confidentiality
+
+This is a private client project. Do not commit API keys, passwords, payment credentials, private client information or production user data. Public disclosure of source code, designs or client details requires appropriate authorization.
