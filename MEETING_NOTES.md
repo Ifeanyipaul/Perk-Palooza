@@ -2,28 +2,18 @@
 
 ## Meeting template
 
-- **Date/time:** YYYY-MM-DD, [time and timezone]
-- **Meeting type:** Product review / planning / engineering sync / QA review
-- **Facilitator:** [Name]
-- **Attendees:** [Actual attendees]
-- **Purpose:** [Why the meeting was held]
+- **Date/time:** 2026-10-20, [3:49pm and GMT+1]
+- **Meeting type:** Product review/planning/engineering sync / QA review
+- **Facilitator:** Paul Ifeanyichukwu Gabriel
+- **Attendees:** 5
+- **Purpose:** To discuss the user roles and how to onboard businesses
 
 ### Discussion
-- [Topic and factual summary]
-- [Topic and factual summary]
+- Business Onboarding
+- User Roles
 
 ### Decisions
-- [Decision, owner/approver, and decision-log link]
-- If no decision was reached, state that clearly.
-
-### Action items
-
-| Action | Owner | Due date | Issue link | Status |
-|---|---|---|---|---|
-| [Action] | [Name] | [Agreed date or TBD] | [Link] | Open |
-
-### Blockers and follow-up
-- [Blocker and next step]
+- The decision was that businesses would be verified before they are uploaded or onboarded.
 
 ---
 
