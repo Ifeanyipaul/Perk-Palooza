@@ -29,6 +29,37 @@ Use one entry per meaningful reporting period. Keep statements factual and link 
 
 ---
 
+## 2026-10-21 — Wallet work and payment-provider access
+
+**Overall status:** Wallet work is reported in progress; payment integration is awaiting confirmation of authorized provider access.  
+**Project phase:** Early implementation / integration preparation; progress is based on a team chat update and has not been independently verified.
+
+### Completed
+- Recorded the developer's progress update and created [Issue #3 — Wallet implementation and payment-provider access](https://github.com/Ifeanyipaul/Perk-Palooza/issues/3) to track the dependency and next actions.
+
+### In progress
+- Wallet implementation — owner: Ramzypëë (as identified in the team chat); details and implementation evidence still to be added.
+- Confirming whether an approved Paystack account or another payment provider is available for the project — product/client confirmation required.
+
+### Blockers / risks
+- The developer asked whether payment-provider access is available. Until the product/client confirms the provider and supplies authorized sandbox/test access securely, provider-dependent integration may be blocked.
+- No payment integration, successful transaction, or testing is claimed as complete.
+- Do not share payment credentials in GitHub issues or commit secrets to the repository.
+
+### Decisions
+- No payment-provider decision has been recorded yet. Continue wallet work that does not depend on provider credentials where feasible, then integrate and test using the provider's sandbox once access is authorized.
+
+### Next actions
+- Product/team lead — confirm the approved provider and whether sandbox/test access is available, or request that the client provide it.
+- Developer — continue provider-independent wallet work where feasible and add a brief progress note, screenshots/PR, and any concrete blocker to [Issue #3](https://github.com/Ifeanyipaul/Perk-Palooza/issues/3).
+- Developer — integrate and test payment flows in sandbox after access is provided; record test evidence before any production use.
+
+### Evidence / links
+- Team chat update, 21 October 2026, 7:42–7:53 AM (reported by the user).
+- [Issue #3 — Wallet implementation and payment-provider access](https://github.com/Ifeanyipaul/Perk-Palooza/issues/3).
+
+---
+
 ## 2026-10-20 — Documentation and planning baseline
 
 **Overall status:** Planning baseline; delivery status has not been independently confirmed.  
