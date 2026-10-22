@@ -29,6 +29,40 @@ Use one entry per meaningful reporting period. Keep statements factual and link 
 
 ---
 
+## 2026-10-22 — Revenue model and card workflow follow-up
+
+**Overall status:** Product questions documented; commercial and card-workflow decisions remain open.  
+**Project phase:** Product planning / requirements refinement.
+
+### Completed
+- Recorded the 21 October discussion with the CEO about possible revenue from businesses and customers, a proposed 5% fee/commission, paid business advertising, card design and whether businesses would print cards.
+- Created [Issue #4 — Define and validate revenue model](https://github.com/Ifeanyipaul/Perk-Palooza/issues/4) to turn the commercial discussion into trackable questions and acceptance criteria.
+- Created [Issue #5 — Define card design and printing workflow](https://github.com/Ifeanyipaul/Perk-Palooza/issues/5) to resolve card formats, design requirements and printing responsibility.
+- Added corresponding entries to the decision log while explicitly marking these items as proposals / under review.
+
+### Product leadership contribution recorded
+Paul Ifeanyichukwu Gabriel reports contributing to product feature decisions, marketing strategy, revenue discussions and business onboarding, and participated in the discussion with the CEO. This log records the reported contribution and the resulting documentation work; it does not claim sole ownership of the ideas, an approved revenue model, completed designs, implementation, or realised revenue.
+
+### Open items
+- Exact 5% fee basis, payer, scope and treatment of refunds/cancellations.
+- Business advertising formats, pricing, approval and disclosure.
+- Card format(s), MVP inclusion, design approval and printing responsibility.
+- Confirmation of decisions by the authorised product/business decision-makers.
+
+### Next actions
+- Review Issues #4 and #5 with the CEO and assign owners.
+- Record explicit decisions and rationale in DECISION_LOG.md.
+- Update the PRD and roadmap only after approval.
+- Link dated follow-up messages, approved Figma designs and any test/demo evidence as they become available.
+
+### Evidence / links
+- [Meeting notes — 21 October 2026](MEETING_NOTES.md#2026-10-21-revenue-model-and-app-card-discussion)
+- [Issue #4 — Revenue model](https://github.com/Ifeanyipaul/Perk-Palooza/issues/4)
+- [Issue #5 — Card design and printing](https://github.com/Ifeanyipaul/Perk-Palooza/issues/5)
+- [Decision log](DECISION_LOG.md)
+
+---
+
 ## 2026-10-21 — Wallet work and payment-provider access
 
 **Overall status:** Wallet work is reported in progress; payment integration is awaiting confirmation of authorized provider access.  
