@@ -28,19 +28,23 @@ The Product Requirements Document (PRD) is the source of truth for requirements.
 - [Decision Log](DECISION_LOG.md)
 - [Progress Log](PROGRESS_LOG.md)
 - [Meeting Notes](MEETING_NOTES.md)
+- [Revenue model follow-up — Issue #4](https://github.com/Ifeanyipaul/Perk-Palooza/issues/4)
+- [Card design and printing workflow — Issue #5](https://github.com/Ifeanyipaul/Perk-Palooza/issues/5)
 - [Open UI design task](https://github.com/Ifeanyipaul/Perk-Palooza/issues/1)
 
 ## Current priorities
 
 1. Review the PRD and agree the MVP scope.
 2. Resolve launch-blocking product and operational questions.
-3. Track UI design deliverables and review them against agreed user journeys.
-4. Break approved requirements into assigned GitHub Issues with acceptance criteria.
-5. Keep implementation, testing and release claims tied to verifiable work.
+3. Resolve revenue-model assumptions before implementing fees or paid advertising.
+4. Confirm card types, design requirements and printing responsibility before implementation.
+5. Track UI design deliverables and review them against agreed user journeys.
+6. Break approved requirements into assigned GitHub Issues with acceptance criteria.
+7. Keep implementation, testing and release claims tied to verifiable work.
 
 ## Team coordination
 
-Paul Ifeanyichukwu Gabriel coordinates requirements, tasks, decisions and progress as Team Lead. Engineering, design and QA contributions should be attributed to the people who actually perform that work. See [Team and Responsibilities](TEAM_AND_RESPONSIBILITIES.md).
+Paul Ifeanyichukwu Gabriel coordinates requirements, tasks and progress as Team Lead and contributes to product feature discussions, marketing strategy, revenue planning and business onboarding. Engineering, design and QA contributions should be attributed to the people who actually perform that work. See [Team and Responsibilities](TEAM_AND_RESPONSIBILITIES.md).
 
 ## Technology
 
