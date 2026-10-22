@@ -26,12 +26,86 @@ Record the agreed decision. If not decided, write “Not decided”.
 **Rationale and trade-offs**  
 Why was the option chosen? What risks or consequences remain?
 
-**Follow-up actions**  
+**Follow-up actions**
 - [ ] [Action, owner, target date if agreed]
 
 ---
 
 ## Decision history
+
+### [DEC-002] Revenue model: proposed 5% fee and business advertising
+
+- **Status:** Proposed / Under review — not approved
+- **Date raised:** 2026-10-21
+- **Decision date:** Not decided
+- **Decision owner:** CEO and authorised product/business decision-makers to confirm
+- **Contributors consulted:** Paul Ifeanyichukwu Gabriel and the CEO (CEO's name not recorded in the meeting note)
+- **Related PRD section:** Monetisation / fees / business advertising — exact section to confirm
+- **Related GitHub Issues:** [Issue #4 — Define and validate revenue model](https://github.com/Ifeanyipaul/Perk-Palooza/issues/4)
+
+**Context**
+
+During a product discussion on 21 October 2026, Paul and the CEO discussed possible revenue from businesses and customers. A 5% fee or commission was considered, alongside potential paid advertisements from businesses on the platform.
+
+**Options considered**
+
+- A 5% fee or commission (the basis and payer remain unspecified).
+- Paid advertising or promoted placements for businesses.
+- Potentially combining more than one revenue stream, subject to validation.
+
+These are discussion points, not a complete or approved list of commercial options.
+
+**Decision**
+
+Not decided. The 5% proposal and business advertising have not been confirmed as approved pricing or launch features.
+
+**Rationale and trade-offs**
+
+The model must be understandable to customers and businesses, commercially viable, and operationally implementable. The team must clarify who pays, how fees are calculated and collected, how refunds and failed transactions are handled, how ads are labelled and moderated, and whether the model affects adoption or trust.
+
+**Follow-up actions**
+
+- [ ] Define the fee calculation basis, payer, scope, collection point and refund/cancellation treatment.
+- [ ] Define advertising placements, pricing, duration, business eligibility and moderation.
+- [ ] Evaluate commercial and user-experience implications with the CEO and relevant team members.
+- [ ] Record the final authorised decision and update the PRD/roadmap before implementation.
+
+### [DEC-003] App-card design and printing responsibility
+
+- **Status:** Under review — not approved
+- **Date raised:** 2026-10-21
+- **Decision date:** Not decided
+- **Decision owner:** Product/CEO decision-makers to confirm
+- **Contributors consulted:** Paul Ifeanyichukwu Gabriel and the CEO (CEO's name not recorded in the meeting note)
+- **Related PRD section:** Card design / physical-card scope / business redemption — exact section to confirm
+- **Related GitHub Issues:** [Issue #5 — Define card design and printing workflow](https://github.com/Ifeanyipaul/Perk-Palooza/issues/5)
+
+**Context**
+
+The discussion covered how the app's cards should be designed and whether businesses should print cards themselves.
+
+**Options considered**
+
+- Digital in-app cards only.
+- A printable card or template.
+- Physical cards, with printing by the platform, businesses or an approved print partner.
+
+These options are listed to structure follow-up; they were not all necessarily discussed as formal alternatives and none is approved by this record.
+
+**Decision**
+
+Not decided. Card format, MVP scope and printing responsibility require explicit confirmation.
+
+**Rationale and trade-offs**
+
+The choice affects design consistency, cost, business operations, security, copying or tampering risks, card identification and redemption verification. The team should define the card format and security requirements before implementation.
+
+**Follow-up actions**
+
+- [ ] Confirm card type(s) and MVP scope with the CEO/product team.
+- [ ] Review design options with the product designer.
+- [ ] If printing is in scope, define who prints, who pays, print specifications and security controls.
+- [ ] Record the final decision and link approved designs and acceptance criteria.
 
 ### [DEC-001] Verify businesses before onboarding
 
@@ -41,21 +115,24 @@ Why was the option chosen? What risks or consequences remain?
 - **Decision owner:** To be confirmed by the team
 - **Contributors consulted:** Meeting attendees; names should be recorded only where confirmed
 - **Related PRD section:** Business onboarding
-- **Related GitHub Issues:** Create/link a dedicated business-verification issue
+- **Related GitHub Issues:** [Issue #2 — Business verification and onboarding](https://github.com/Ifeanyipaul/Perk-Palooza/issues/2)
 
-**Context**  
+**Context**
+
 The team discussed user roles and how businesses should be onboarded.
 
-**Decision**  
+**Decision**
+
 Businesses must be verified before they are uploaded to or onboarded onto the platform.
 
-**Rationale and trade-offs**  
+**Rationale and trade-offs**
+
 This establishes verification as a gate before a business becomes available on the platform. The team still needs to define the verification evidence, responsible reviewer, approval/rejection states and audit trail.
 
 **Follow-up actions**
-- [ ] Define required business verification documents and checks — owner to be assigned
-- [ ] Define reviewer permissions and approval/rejection workflow — owner to be assigned
-- [ ] Track the workflow in [Issue #2](https://github.com/Ifeanyipaul/Perk-Palooza/issues/2) and assign an owner — owner to be assigned
+- [ ] Define required business verification documents and checks — owner to be assigned.
+- [ ] Define reviewer permissions and approval/rejection workflow — owner to be assigned.
+- [ ] Track the workflow in [Issue #2](https://github.com/Ifeanyipaul/Perk-Palooza/issues/2) and assign an owner — owner to be assigned.
 
 ---
 
