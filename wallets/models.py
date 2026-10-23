@@ -64,6 +64,13 @@ class WalletEntry(models.Model):
     available_change = models.BigIntegerField(default=0)
     committed_change = models.BigIntegerField(default=0)
     locked_change = models.BigIntegerField(default=0)
+    card = models.ForeignKey(
+        'cards.Card',
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True,
+        related_name='wallet_entries',
+    )
     payment = models.ForeignKey(
         'Payment',
         on_delete=models.PROTECT,

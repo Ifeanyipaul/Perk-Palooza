@@ -82,6 +82,13 @@ class FloatEntry(models.Model):
     entry_type = models.CharField(max_length=30, choices=EntryType.choices)
     amount = models.BigIntegerField()
     balance_after = models.BigIntegerField()
+    redemption = models.ForeignKey(
+        'cards.Redemption',
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True,
+        related_name='float_entries',
+    )
     note = models.CharField(max_length=255, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
