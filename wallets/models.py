@@ -196,12 +196,17 @@ class Payment(models.Model):
         related_name='payments',
     )
     paystack_reference = models.CharField(max_length=100, unique=True)
-    card_value = models.BigIntegerField(default=0, help_text='Amount in kobo')
+    card_quantity = models.PositiveIntegerField(
+        default=0, help_text='Number of cards created in this payment'
+    )
+    card_value = models.BigIntegerField(
+        default=0, help_text='Total value loaded onto the cards, in kobo'
+    )
     card_creation_fee_per_card = models.BigIntegerField(
-        default=0, help_text='Rate used for this payment, in kobo'
+        default=0, help_text='Creation fee rate used for this payment, in kobo'
     )
     card_creation_fee = models.BigIntegerField(
-        default=0, help_text='Total creation fee before discount, in kobo'
+        default=0, help_text='Creation fee per card x quantity, before discount, in kobo'
     )
     discount_bp = models.PositiveIntegerField(
         default=0, help_text='Bulk discount applied, in basis points'
@@ -212,7 +217,6 @@ class Payment(models.Model):
     printing_fee_per_card = models.BigIntegerField(default=0, help_text='Amount in kobo')
     printing_fee = models.BigIntegerField(default=0, help_text='Amount in kobo')
     delivery_fee = models.BigIntegerField(default=0, help_text='Amount in kobo')
-    platform_fee = models.BigIntegerField(default=0, help_text='Amount in kobo')
     paystack_fee = models.BigIntegerField(default=0, help_text='Amount in kobo')
     total_charged = models.BigIntegerField(help_text='Amount in kobo')
     cashback_earned = models.BigIntegerField(
@@ -230,20 +234,25 @@ class Payment(models.Model):
         constraints = [
             models.CheckConstraint(
                 condition=Q(
-                    total_charged=F('card_value')
-                    + F('card_creation_fee')
-                    - F('discount_amount')
-                    + F('printing_fee')
-                    + F('delivery_fee')
-                    + F('platform_fee')
-                    + F('paystack_fee')
+                    card_creation_fee=F('card_creation_fee_per_card') * F('card_quantity')
                 ),
-                name='payment_total_matches_parts',
+                name='payment_creation_fee_matches_quantity',
             ),
             models.CheckConstraint(
                 condition=Q(discount_amount__gte=0)
                 & Q(discount_amount__lte=F('card_creation_fee')),
                 name='payment_discount_within_fee',
+            ),
+            models.CheckConstraint(
+                condition=Q(
+                    total_charged=F('card_value')
+                    + F('card_creation_fee')
+                    - F('discount_amount')
+                    + F('printing_fee')
+                    + F('delivery_fee')
+                    + F('paystack_fee')
+                ),
+                name='payment_total_matches_parts',
             ),
             models.CheckConstraint(
                 condition=Q(cashback_earned__gte=0),
