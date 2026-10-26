@@ -3,9 +3,14 @@ import uuid
 
 from django.conf import settings
 from django.db import models
-from django.db.models import Q
+from django.db.models import F, Q
+
+# All money fields are stored in kobo (1 naira = 100 kobo) as whole numbers.
+# All percentages are stored in basis points (1% = 100, 10% = 1000, 100% = 10000).
 
 CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
+MIN_VALIDITY_DAYS = 14
+MAX_VALIDITY_DAYS = 30
 
 
 def generate_card_code():
@@ -19,6 +24,19 @@ def generate_serial_number():
 class CardType(models.TextChoices):
     DIGITAL = 'digital', 'Digital'
     PHYSICAL = 'physical', 'Physical'
+
+
+class CardDesign(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    preview_url = models.URLField(blank=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
 
 
 class CardBatch(models.Model):
@@ -39,10 +57,18 @@ class CardBatch(models.Model):
         blank=True,
         related_name='card_batches',
     )
+    design = models.ForeignKey(
+        CardDesign,
+        on_delete=models.PROTECT,
+        related_name='batches',
+    )
     kind = models.CharField(max_length=20, choices=Kind.choices)
     card_type = models.CharField(max_length=20, choices=CardType.choices)
     quantity = models.PositiveIntegerField()
-    value_per_card = models.BigIntegerField(default=0)
+    value_per_card = models.BigIntegerField(default=0, help_text='Amount in kobo')
+    validity_days = models.PositiveSmallIntegerField(
+        help_text='How many days the cards stay valid, between 14 and 30'
+    )
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -56,6 +82,11 @@ class CardBatch(models.Model):
             models.CheckConstraint(
                 condition=Q(value_per_card__gte=0),
                 name='batch_value_not_negative',
+            ),
+            models.CheckConstraint(
+                condition=Q(validity_days__gte=MIN_VALIDITY_DAYS)
+                & Q(validity_days__lte=MAX_VALIDITY_DAYS),
+                name='batch_validity_14_to_30_days',
             ),
         ]
 
@@ -71,6 +102,10 @@ class Card(models.Model):
         EXPIRED = 'expired', 'Expired'
         CANCELLED = 'cancelled', 'Cancelled'
         LOST = 'lost', 'Lost'
+
+    class ReplacementReason(models.TextChoices):
+        REINSTATED = 'reinstated', 'Reinstated after expiry'
+        LOST = 'lost', 'Replaces a lost card'
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     giver = models.ForeignKey(
@@ -88,7 +123,14 @@ class Card(models.Model):
     )
     code = models.CharField(max_length=20, unique=True, default=generate_card_code)
     card_type = models.CharField(max_length=20, choices=CardType.choices)
-    face_value = models.BigIntegerField(default=0)
+    display_name = models.CharField(
+        max_length=100, blank=True,
+        help_text='Name shown on the card, if any',
+    )
+    face_value = models.BigIntegerField(default=0, help_text='Amount in kobo')
+    validity_days = models.PositiveSmallIntegerField(
+        help_text='Days the card stays valid, between 14 and 30'
+    )
     status = models.CharField(
         max_length=20, choices=Status.choices, default=Status.INACTIVE
     )
@@ -115,6 +157,9 @@ class Card(models.Model):
         blank=True,
         related_name='replaced_by',
     )
+    replacement_reason = models.CharField(
+        max_length=20, choices=ReplacementReason.choices, blank=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     activated_at = models.DateTimeField(null=True, blank=True)
     expires_at = models.DateTimeField(null=True, blank=True)
@@ -124,6 +169,7 @@ class Card(models.Model):
         ordering = ['-created_at']
         indexes = [
             models.Index(fields=['giver', 'status']),
+            models.Index(fields=['business', 'status']),
             models.Index(fields=['batch']),
             models.Index(fields=['status', 'expires_at']),
         ]
@@ -141,6 +187,20 @@ class Card(models.Model):
             models.CheckConstraint(
                 condition=Q(face_value__gte=0),
                 name='card_face_value_not_negative',
+            ),
+            models.CheckConstraint(
+                condition=Q(validity_days__gte=MIN_VALIDITY_DAYS)
+                & Q(validity_days__lte=MAX_VALIDITY_DAYS),
+                name='card_validity_14_to_30_days',
+            ),
+            models.CheckConstraint(
+                condition=(Q(replaces__isnull=True) & Q(replacement_reason=''))
+                | (Q(replaces__isnull=False) & ~Q(replacement_reason='')),
+                name='card_replacement_has_reason',
+            ),
+            models.CheckConstraint(
+                condition=~Q(replacement_reason='reinstated') | Q(card_type='digital'),
+                name='reinstated_card_is_digital',
             ),
         ]
 
@@ -160,9 +220,24 @@ class Redemption(models.Model):
         on_delete=models.PROTECT,
         related_name='redemptions',
     )
-    amount_spent = models.BigIntegerField()
-    leftover = models.BigIntegerField(default=0)
-    cashback_amount = models.BigIntegerField(default=0)
+    redeemed_by = models.ForeignKey(
+        'businesses.BusinessRepresentative',
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True,
+        related_name='redemptions',
+    )
+    amount_spent = models.BigIntegerField(help_text='Amount in kobo')
+    leftover = models.BigIntegerField(default=0, help_text='Amount in kobo')
+    business_charge_bp = models.PositiveIntegerField(
+        help_text='Charge rate used, in basis points (200 = 2%)'
+    )
+    business_charge = models.BigIntegerField(
+        help_text="Company's earnings from this redemption, in kobo"
+    )
+    business_net_amount = models.BigIntegerField(
+        help_text='What the business is paid from its float, in kobo'
+    )
     redeemed_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -178,8 +253,13 @@ class Redemption(models.Model):
                 name='redemption_leftover_not_negative',
             ),
             models.CheckConstraint(
-                condition=Q(cashback_amount__gte=0),
-                name='redemption_cashback_not_negative',
+                condition=Q(business_charge__gte=0)
+                & Q(business_charge__lte=F('amount_spent')),
+                name='redemption_charge_within_amount',
+            ),
+            models.CheckConstraint(
+                condition=Q(business_net_amount=F('amount_spent') - F('business_charge')),
+                name='redemption_net_matches_parts',
             ),
         ]
 

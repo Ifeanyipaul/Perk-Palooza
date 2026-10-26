@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'businesses',
     'wallets',
     'cards',
+    'notifications',
 ]
 
 MIDDLEWARE = [
