@@ -158,3 +158,42 @@ Track each item below in an issue and assign an owner. These remain unresolved u
 - OD-16: Mandatory notification channels and urgency.
 
 Do not treat the open items above as approved product behavior until the team records a decision.
+
+
+### [DEC-004] Payment gateway evaluation: XpressPay ₦1,000 flat transaction charge
+
+- **Status:** Under review — not approved
+- **Date raised:** 2026-10-27
+- **Decision date:** Not decided
+- **Decision owner:** CEO and authorised product/business decision-makers to confirm
+- **Contributors consulted:** Paul Ifeanyichukwu Gabriel and meeting participants (full roles/names to be confirmed)
+- **Related PRD section:** Payments / gateway fees / settlement — exact section to confirm
+- **Related meeting note:** [Business Partnership Meeting between XPSL and Perk Palooza — 27 October 2026](MEETING_NOTES.md#2026-10-27--business-partnership-meeting-between-xpsl-and-perk-palooza)
+
+**Context**
+
+At a meeting titled “Business Partnership Meeting between XPSL x Perk Palooza” on 27 October 2026, XpressPay reportedly proposed a flat ₦1,000 charge per transaction. This would be in addition to Perk Palooza's own fee. Perk Palooza is still evaluating the proposal.
+
+**Options to assess**
+
+- Continue discussions with XpressPay and request complete written terms.
+- Compare the proposal against alternative payment gateway providers.
+- Evaluate who would bear the provider charge and whether the combined fees are commercially acceptable.
+
+These are evaluation options, not confirmed decisions.
+
+**Decision**
+
+Not decided. Perk Palooza has not accepted the offer or selected XpressPay as its payment provider in this record.
+
+**Rationale and trade-offs**
+
+A fixed ₦1,000 fee could have a disproportionate impact on low-value transactions when combined with Perk Palooza's own fee. The team needs to understand the fee payer, transaction-value rules, settlement model, refunds, failed payments, taxes and any additional charges before deciding.
+
+**Follow-up actions**
+
+- [ ] Obtain XpressPay's formal fee schedule and written proposal.
+- [ ] Confirm the exact fee basis, who pays it and any additional charges.
+- [ ] Model total fees across representative transaction amounts.
+- [ ] Verify settlement timing, split/direct-to-business settlement, refunds, reconciliation and dispute processes.
+- [ ] Compare other gateway providers and document the approved choice.
