@@ -102,3 +102,43 @@ This note is a contemporaneous project record based on Paul's account of the dis
 ### Links
 - Related issues:
 - Relevant PRD sections:
+
+
+## 2026-10-27 — Business Partnership Meeting between XPSL and Perk Palooza
+
+- **Date:** 27 October 2026
+- **Meeting title:** Business Partnership Meeting between XPSL x Perk Palooza
+- **Payment provider:** XpressPay / XpressPay Solutions Limited (as shown in the meeting screenshots; confirm the legal entity and contracting name before signing)
+- **Purpose:** Evaluate XpressPay as a potential payment gateway for Perk Palooza.
+- **Evidence:** Screenshots supplied by Paul from the Microsoft Teams meeting. The screenshots show the meeting title, participant panel and that recording/transcription had started. They do not independently confirm the commercial offer or final agreement.
+
+### Commercial proposal discussed
+
+- XpressPay reportedly proposed a **flat ₦1,000 charge per transaction**.
+- This would be an additional charge separate from Perk Palooza's own fee.
+- Perk Palooza is still considering the proposal. **No provider selection or acceptance is recorded as final.**
+
+### Product and business implications to assess
+
+- Calculate the total effective cost per transaction when the provider's ₦1,000 charge is combined with Perk Palooza's proposed fee.
+- Clarify who pays the ₦1,000 charge (customer, business, or Perk Palooza), whether it applies to every transaction regardless of value, and whether taxes or other charges are additional.
+- Confirm settlement timing, direct-to-business settlement/split settlement support, reconciliation reports, refunds, failed payments, chargebacks, dispute handling, uptime and support.
+- Compare the proposal with other payment gateway options before making a decision.
+- Request the complete fee schedule and written commercial terms from XpressPay.
+
+### Current status
+
+**Under consideration — not approved.** The ₦1,000-per-transaction offer is a reported proposal, not a signed agreement or a confirmed implemented payment flow.
+
+### Follow-up actions
+
+- [ ] Obtain the provider's written fee schedule and formal proposal.
+- [ ] Confirm whether the ₦1,000 charge is fixed for every transaction and identify who bears it.
+- [ ] Model total transaction costs at different payment amounts alongside Perk Palooza's own fee.
+- [ ] Confirm settlement and split-payment capabilities, timelines and operational requirements.
+- [ ] Compare XpressPay against alternative providers and record the final authorised decision.
+- [ ] Save the original meeting screenshots and written provider communications in the Perk Palooza evidence folder.
+
+### Evidence and attribution
+
+This note is based on Paul's account of the meeting and the supplied Teams screenshots. The screenshots support that a meeting titled “Business Partnership Meeting between XPSL x Perk Palooza” took place, but the fee details should be corroborated with written correspondence or a formal proposal. Do not present the offer as accepted or the partnership as finalised without supporting evidence.
