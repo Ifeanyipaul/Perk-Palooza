@@ -2,7 +2,7 @@
 
 A purpose-spending platform in development. The product is designed to help people allocate funds for defined purposes and enable controlled spending with approved businesses.
 
-> **Project status:** Requirements review and MVP planning, with UI design scheduled to begin. This is not a production-ready product.
+> **Project status (8 November 2026):** Core application logic is reported complete. Testing, integration verification and production readiness have not yet been confirmed.
 
 ## Problem
 
