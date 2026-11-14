@@ -1,5 +1,46 @@
 # Perk Palooza — Meeting Notes
 
+## 2026-11-13 — XpressPay integration follow-up
+
+- **Date:** 13 November 2026
+- **Meeting:** Follow-up with XpressPay regarding the Perk Palooza payment gateway.
+- **Purpose:** Obtain the sandbox details and business subaccount mapping required to proceed with payment gateway integration.
+- **Record status:** Updated from Paul's account of the meeting and the subsequent provider handoff.
+
+### Requested and received from XpressPay
+
+Following the meeting, the Perk Palooza team requested the following integration details, and XpressPay has provided them:
+
+- XpressPay test API keys.
+- Confirmed Debug checkout and split-account sandbox URLs.
+- A mapping of each Perk Palooza business ID to its verified XpressPay subaccount ID.
+
+The actual credentials and sensitive configuration values should remain in approved secret storage or environment variables. They must not be added to this repository, committed to source control, or pasted into public issues.
+
+### Current integration status
+
+**Payment gateway integration is in progress.** The supplied sandbox information gives the development team the required provider-side configuration to continue implementation. This does not yet mean that a complete sandbox payment or split settlement has been verified.
+
+### Dependencies and next steps
+
+1. Continue implementing the XpressPay checkout and split-account flow using the supplied sandbox configuration.
+2. Apply and verify the mapping between each Perk Palooza business ID and its corresponding verified XpressPay subaccount ID.
+3. Obtain approval for the index-rename migration. The migration is required to resolve the related Django system-check warning; do not apply it until approval is received.
+4. The authorised business-side representative must perform a sandbox payment using the agreed test checkout flow.
+5. After the sandbox payment is performed, the developer can inspect the resulting transaction and split report to verify the transaction and allocation to the relevant subaccount.
+6. Record the test result, any defects and the follow-up actions in the project progress log.
+
+### Important distinction
+
+- Sandbox credentials, endpoint URLs and subaccount mapping: **received**.
+- Payment gateway implementation: **in progress**.
+- Index-rename migration approval: **pending**.
+- Sandbox payment by the authorised representative: **pending**.
+- Transaction and split-report verification by the developer: **pending the sandbox payment**.
+- Production payment processing: **not confirmed**.
+
+---
+
 ## 2026-10-21 — Revenue model and app-card discussion
 
 - **Date:** 21 October 2026
@@ -55,33 +96,6 @@ This note is a contemporaneous project record based on Paul's account of the dis
 
 ---
 
-## 2026-10-20 — Product planning and onboarding
-
-- **Time:** Approximately 3:49 PM (WAT, UTC+1), as recorded in the original notes
-- **Meeting type:** Product planning
-- **Facilitator:** Paul Ifeanyichukwu Gabriel
-- **Attendees:** 5 (names not recorded in this note)
-- **Purpose:** Discuss user roles and the business onboarding process
-
-### Discussion topics
-
-- Business onboarding
-- User roles
-
-### Decision recorded
-
-- Businesses must be verified before they are uploaded to or onboarded onto the platform.
-- See [Decision Log — DEC-001](DECISION_LOG.md#dec-001-verify-businesses-before-onboarding).
-
-### Follow-up actions
-
-- [ ] Define the required business verification checks and supporting evidence — owner to be assigned.
-- [ ] Define who can approve or reject a business and how the decision is recorded — owner to be assigned.
-- [ ] Create/link a GitHub issue with acceptance criteria for business verification — owner to be assigned.
-- [ ] Confirm the MVP user roles and permissions against the PRD — owner to be assigned.
-
----
-
 ## Future meeting template
 
 - **Date/time:**
@@ -102,43 +116,3 @@ This note is a contemporaneous project record based on Paul's account of the dis
 ### Links
 - Related issues:
 - Relevant PRD sections:
-
-
-## 2026-10-27 — Business Partnership Meeting between XPSL and Perk Palooza
-
-- **Date:** 27 October 2026
-- **Meeting title:** Business Partnership Meeting between XPSL x Perk Palooza
-- **Payment provider:** XpressPay / XpressPay Solutions Limited (as shown in the meeting screenshots; confirm the legal entity and contracting name before signing)
-- **Purpose:** Evaluate XpressPay as a potential payment gateway for Perk Palooza.
-- **Evidence:** Screenshots supplied by Paul from the Microsoft Teams meeting. The screenshots show the meeting title, participant panel and that recording/transcription had started. They do not independently confirm the commercial offer or final agreement.
-
-### Commercial proposal discussed
-
-- XpressPay reportedly proposed a **flat ₦1,000 charge per transaction**.
-- This would be an additional charge separate from Perk Palooza's own fee.
-- Perk Palooza is still considering the proposal. **No provider selection or acceptance is recorded as final.**
-
-### Product and business implications to assess
-
-- Calculate the total effective cost per transaction when the provider's ₦1,000 charge is combined with Perk Palooza's proposed fee.
-- Clarify who pays the ₦1,000 charge (customer, business, or Perk Palooza), whether it applies to every transaction regardless of value, and whether taxes or other charges are additional.
-- Confirm settlement timing, direct-to-business settlement/split settlement support, reconciliation reports, refunds, failed payments, chargebacks, dispute handling, uptime and support.
-- Compare the proposal with other payment gateway options before making a decision.
-- Request the complete fee schedule and written commercial terms from XpressPay.
-
-### Current status
-
-**Under consideration — not approved.** The ₦1,000-per-transaction offer is a reported proposal, not a signed agreement or a confirmed implemented payment flow.
-
-### Follow-up actions
-
-- [ ] Obtain the provider's written fee schedule and formal proposal.
-- [ ] Confirm whether the ₦1,000 charge is fixed for every transaction and identify who bears it.
-- [ ] Model total transaction costs at different payment amounts alongside Perk Palooza's own fee.
-- [ ] Confirm settlement and split-payment capabilities, timelines and operational requirements.
-- [ ] Compare XpressPay against alternative providers and record the final authorised decision.
-- [ ] Save the original meeting screenshots and written provider communications in the Perk Palooza evidence folder.
-
-### Evidence and attribution
-
-This note is based on Paul's account of the meeting and the supplied Teams screenshots. The screenshots support that a meeting titled “Business Partnership Meeting between XPSL x Perk Palooza” took place, but the fee details should be corroborated with written correspondence or a formal proposal. Do not present the offer as accepted or the partnership as finalised without supporting evidence.
