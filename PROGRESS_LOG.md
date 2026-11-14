@@ -1,5 +1,41 @@
 # Perk Palooza — Progress Log
 
+## 2026-11-14 — XpressPay sandbox access received; payment gateway integration in progress
+
+**Overall status:** XpressPay has provided the requested sandbox integration details following the Perk Palooza meeting. The team is now working on the payment gateway integration. End-to-end sandbox verification is still pending.  
+**Project phase:** Payment gateway integration / sandbox testing preparation.
+
+### Completed
+- Following the meeting with XpressPay, the team requested and received the integration information needed to proceed:
+  - XpressPay test API keys.
+  - Confirmed Debug checkout and split-account sandbox URLs.
+  - Mapping of each Perk Palooza business ID to its verified XpressPay subaccount ID.
+- Recorded the provider's requested next steps and dependencies for the integration.
+
+### In progress
+- Payment gateway integration using the supplied XpressPay sandbox credentials and endpoints.
+- Implementing and validating the business-to-XpressPay subaccount mapping.
+- Preparing the checkout and split-account flow for sandbox verification.
+
+### Pending dependencies / actions
+- **Index-rename migration:** Approval is required before the index-rename migration can be applied to clear the related Django system-check warning.
+- **Sandbox payment:** The authorised Perk Palooza/business-side representative needs to perform a sandbox payment using the agreed test flow.
+- **Transaction verification:** After the sandbox payment is completed, the developer can inspect the resulting transaction and split report to verify the payment and subaccount allocation.
+- Keep test keys and other credentials in approved secret storage or environment variables. Do not commit credentials to the repository or expose them in issues, logs or screenshots.
+
+### Next actions
+1. Continue implementing the XpressPay checkout and split-account integration.
+2. Confirm the business ID to verified subaccount ID mapping is applied correctly.
+3. Obtain approval for the index-rename migration and run the relevant Django system check after the migration.
+4. Coordinate the sandbox payment with the authorised business-side representative.
+5. Review the resulting transaction record and split report, then document the test outcome and any fixes required.
+
+### Evidence / links
+- XpressPay integration details were supplied to the team after the provider meeting on 13 November 2026.
+- Record the relevant implementation pull request, sandbox test result and provider correspondence here when available.
+
+---
+
 ## 2026-11-08 — Core application logic completion update
 
 **Overall status:** Core application logic reported complete by the product lead; testing and release readiness remain to be confirmed.  
@@ -75,7 +111,7 @@ Paul Ifeanyichukwu Gabriel reports contributing to product feature decisions, ma
 ### Open items
 - Exact 5% fee basis, payer, scope and treatment of refunds/cancellations.
 - Business advertising formats, pricing, approval and disclosure.
-- Card format(s), MVP inclusion, design approval and printing responsibility.
+- Card format(s), design approval, MVP inclusion and printing responsibility.
 - Confirmation of decisions by the authorised product/business decision-makers.
 
 ### Next actions
